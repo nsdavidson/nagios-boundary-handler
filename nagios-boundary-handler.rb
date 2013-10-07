@@ -1,10 +1,11 @@
 #!/usr/bin/env ruby
 
+require 'rubygems'
 require 'boundary_event'
 require 'optparse'
 require 'yaml'
 
-BOUNDARY_CREDS_FILE = "boundary.yml"
+BOUNDARY_CREDS_FILE = "/usr/local/nagios/etc/boundary.yml"
 
 def load_creds(file)
 	begin

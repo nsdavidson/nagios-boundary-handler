@@ -65,11 +65,11 @@ OptionParser.new do |opts|
 end
 
 event = BoundaryEvent.new(:api_key => boundary_creds["apikey"], :org_id => boundary_creds["orgid"])
-title = "#{options[:hostname]}"
+title = "#{options[:hostname]} "
 properties = { :eventKey => "nagios-check", :state => "#{options[:state]}", :attempts => options[:attempts], :host => options[:hostname] }
 message = "#{options[:output]}"
 fingerprint = ["eventKey", "@title", "host"]
-source = "Nagios"
+source = { :ref => "Nagios", :type => "#{options[:event_type]}"}
 tags = ["#{options[:hostname]}"]
 status = "OPEN"
 

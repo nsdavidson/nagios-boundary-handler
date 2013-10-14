@@ -69,7 +69,7 @@ title = "#{options[:hostname]} "
 properties = { :eventKey => "nagios-check", :state => "#{options[:state]}", :attempts => options[:attempts], :host => options[:hostname] }
 message = "#{options[:output]}"
 fingerprint = ["eventKey", "@title", "host"]
-source = { :ref => "Nagios", :type => "#{options[:event_type]}"}
+source = { :ref => "#{options[:hostname]}", :type => "#{options[:event_type]}"}
 tags = ["#{options[:hostname]}"]
 status = "OPEN"
 
